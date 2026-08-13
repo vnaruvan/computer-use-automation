@@ -1,11 +1,7 @@
-import express from "express";
+import { createApp } from "./app.js";
 
-const app = express();
+const app = createApp();
 const port = 4173;
-
-app.get("/", (_request, response) => {
-  response.send("Northstar Core training application");
-});
 
 app.listen(port, "127.0.0.1", () => {
   console.log(`Application running at http://127.0.0.1:${port}`);
