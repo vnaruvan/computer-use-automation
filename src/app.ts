@@ -1,5 +1,6 @@
 import express from "express";
-import { memberSearchPage } from "./pages.js";
+import { memberDetailsPage, memberSearchPage } from "./pages.js";
+import { findMember } from "./data.js";
 
 export function createApp() {
     const app = express();
@@ -22,7 +23,14 @@ export function createApp() {
             return;
         }
 
-        response.status(200).send(`Received member ID: ${memberId}`);
+        const member = findMember(memberId);
+
+        if (!member) {
+            response.status(404).send("Member not found.");
+            return;
+        }
+
+        response.status(200).type("html").send(memberDetailsPage(member));
     });
 
     app.get("/", (_request, response) => {
