@@ -1,0 +1,23 @@
+{
+  "name": "computer-use-automation",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "LLM discovery and deterministic replay for computer-use workflows",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.13.3",
+    "tsx": "^4.23.12",
+    "typescript": "^7.0.2"
+  }
+}
