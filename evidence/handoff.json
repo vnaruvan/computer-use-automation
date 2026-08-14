@@ -1,16 +1,16 @@
 {
-  "recordedAt": "2026-08-14T22:37:24.122Z",
+  "recordedAt": "2026-08-14T23:14:04.992Z",
   "runType": "human-handoff",
   "modelUsed": false,
-  "capabilityId": "member.lookup-savings-balance",
+  "capabilityId": "member.open-sub-account-review",
   "sameBrowserPageUsed": true,
   "pageUrlBeforeHandoff": "http://127.0.0.1:4173/members/search",
   "pageUrlAfterHandoff": "http://127.0.0.1:4173/members/[REDACTED]/subaccounts/new",
   "finalAccountCreationDisabled": true,
   "handoff": {
     "request": {
-      "id": "intervention-1786747026641",
-      "capabilityId": "member.lookup-savings-balance",
+      "id": "intervention-1786749216188",
+      "capabilityId": "member.open-sub-account-review",
       "goal": "Review the member and open the sub-account confirmation screen.",
       "currentStep": "Click \"Open new sub-account\"",
       "pageUrl": "http://127.0.0.1:4173/members/search",
@@ -18,23 +18,23 @@
       "screenshotPath": "evidence/handoff-request.png",
       "status": "resumed",
       "controlOwner": "automation",
-      "requestedAt": "2026-08-14T22:37:06.641Z"
+      "requestedAt": "2026-08-14T23:13:36.188Z"
     },
     "events": [
       {
-        "recordedAt": "2026-08-14T22:37:06.641Z",
+        "recordedAt": "2026-08-14T23:13:36.188Z",
         "type": "automation_paused",
         "actor": "automation",
         "description": "Automation paused and transferred control to a human."
       },
       {
-        "recordedAt": "2026-08-14T22:37:21.750Z",
+        "recordedAt": "2026-08-14T23:14:03.051Z",
         "type": "human_action",
         "actor": "operator-demo",
         "description": "Navigated to the sub-account confirmation screen."
       },
       {
-        "recordedAt": "2026-08-14T22:37:24.114Z",
+        "recordedAt": "2026-08-14T23:14:04.984Z",
         "type": "automation_resumed",
         "actor": "operator-demo",
         "description": "The human returned control to automation."

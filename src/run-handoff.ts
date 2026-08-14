@@ -92,7 +92,7 @@ async function run(): Promise<void> {
 
         const waitForResume = session.pause({
             capabilityId:
-                "member.lookup-savings-balance",
+                "member.open-sub-account-review",
             goal:
                 "Review the member and open the sub-account confirmation screen.",
             currentStep:
@@ -169,7 +169,7 @@ async function run(): Promise<void> {
             runType: "human-handoff",
             modelUsed: false,
             capabilityId:
-                "member.lookup-savings-balance",
+                "member.open-sub-account-review",
             sameBrowserPageUsed: true,
             pageUrlBeforeHandoff: redactSensitiveUrl(
                 pageUrlBeforeHandoff,
