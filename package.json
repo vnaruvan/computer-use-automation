@@ -5,14 +5,21 @@
   "scripts": {
     "dev": "tsx src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "browser-check": "tsx src/browser-check.ts",
+    "model-check": "tsx src/model-check.ts",
+    "decision-check": "tsx src/decision-check.ts",
+    "agent": "tsx src/run-agent.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "LLM discovery and deterministic replay for computer-use workflows",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "openai": "^7.4.0",
+    "playwright": "^1.62.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
