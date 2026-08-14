@@ -9,7 +9,8 @@
     "browser-check": "tsx src/browser-check.ts",
     "model-check": "tsx src/model-check.ts",
     "decision-check": "tsx src/decision-check.ts",
-    "agent": "tsx src/run-agent.ts"
+    "agent": "tsx src/run-agent.ts",
+    "replay": "tsx src/run-replay.ts"
   },
   "keywords": [],
   "author": "",

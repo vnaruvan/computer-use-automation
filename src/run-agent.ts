@@ -6,6 +6,10 @@ import {
 } from "./agent/decide.js";
 import { executeDecision } from "./agent/execute.js";
 import { observePage } from "./agent/observe.js";
+import { buildMemberBalanceArtifact } from "./artifact/build.js";
+import { saveArtifact } from "./artifact/save.js";
+
+
 
 loadEnvFile();
 
@@ -50,6 +54,16 @@ try {
             console.log("Goal completed.");
             console.log("Outputs returned to caller:");
             console.log(JSON.stringify(decision.outputs, null, 2));
+
+            const artifact =
+                buildMemberBalanceArtifact(previousActions);
+
+            const artifactPath =
+                "artifacts/member-balance.v1.json";
+
+            await saveArtifact(artifact, artifactPath);
+
+            console.log(`Artifact saved to ${artifactPath}`);
 
             completed = true;
             break;

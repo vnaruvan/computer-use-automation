@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0",
+  "capabilityVersion": "1.0.0",
+  "id": "member.lookup-savings-balance",
+  "name": "Look up member savings balance",
+  "description": "Search for a member and return their current savings balance.",
+  "status": "draft",
+  "application": {
+    "productId": "northstar-core",
+    "supportedVersions": [
+      "training-v1"
+    ],
+    "entryPath": "/",
+    "tenantScope": "shared"
+  },
+  "inputs": [
+    {
+      "name": "memberId",
+      "dataType": "string",
+      "required": true,
+      "sensitive": true,
+      "validationPattern": "^\\d{5}$"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "current_savings_balance",
+      "dataType": "string",
+      "sensitive": true,
+      "extraction": {
+        "method": "text_after_label",
+        "label": "Current savings balance"
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "action": "fill",
+      "target": {
+        "method": "role",
+        "role": "textbox",
+        "name": "Member ID",
+        "exact": true
+      },
+      "value": {
+        "source": "input",
+        "inputName": "memberId"
+      },
+      "timeoutMs": 5000
+    },
+    {
+      "id": "step-2",
+      "action": "click",
+      "target": {
+        "method": "role",
+        "role": "button",
+        "name": "Search",
+        "exact": true
+      },
+      "timeoutMs": 5000
+    }
+  ],
+  "successCheckpoint": {
+    "method": "text_present",
+    "text": "Member Details"
+  },
+  "knownOutcomes": [
+    {
+      "code": "MEMBER_NOT_FOUND",
+      "message": "The requested member does not exist.",
+      "detection": {
+        "method": "text_present",
+        "text": "Member not found."
+      }
+    }
+  ],
+  "policy": {
+    "risk": "read-only",
+    "allowedActions": [
+      "fill",
+      "click"
+    ]
+  }
+}
