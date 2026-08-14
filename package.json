@@ -10,7 +10,11 @@
     "model-check": "tsx src/model-check.ts",
     "decision-check": "tsx src/decision-check.ts",
     "agent": "tsx src/run-agent.ts",
-    "replay": "tsx src/run-replay.ts"
+    "replay": "tsx src/run-replay.ts",
+    "handoff": "tsx src/run-handoff.ts",
+    "test": "tsx --test src/tests/*.test.ts",
+    "failure-demo": "tsx src/run-failure-demo.ts",
+    "stability": "tsx src/run-stability.ts"
   },
   "keywords": [],
   "author": "",

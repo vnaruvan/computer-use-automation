@@ -98,3 +98,57 @@ export function memberDetailsPage(member: Member): string {
 </body>
 </html>`;
 }
+
+export function subAccountConfirmationPage(
+    member: Member,
+): string {
+    return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sub-account Confirmation - Northstar Core</title>
+</head>
+<body>
+  <header>
+    <strong>Northstar Core Banking</strong>
+    <span>Training environment</span>
+  </header>
+
+  <main>
+    <h1>Sub-account Confirmation</h1>
+
+    <p>
+      Review the request before creating a new savings sub-account.
+    </p>
+
+    <dl>
+      <dt>Member ID</dt>
+      <dd>•••${escapeHtml(member.id.slice(-4))}</dd>
+
+      <dt>Member name</dt>
+      <dd>${escapeHtml(member.name)}</dd>
+
+      <dt>Requested account type</dt>
+      <dd>Savings sub-account</dd>
+    </dl>
+
+    <p id="approval-message">
+      Final account creation is disabled in this training environment.
+    </p>
+
+    <button
+      type="button"
+      aria-describedby="approval-message"
+      disabled
+    >
+      Confirm account creation
+    </button>
+
+    <p>
+      <a href="/">Return to member search</a>
+    </p>
+  </main>
+</body>
+</html>`;
+}

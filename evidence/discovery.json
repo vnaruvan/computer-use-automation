@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-08-14T22:43:52.855Z",
+  "runType": "llm-discovery",
+  "modelUsed": true,
+  "capabilityId": "member.lookup-savings-balance",
+  "goal": "Look up member [REDACTED] and read their current savings balance.",
+  "result": "success",
+  "artifactPath": "evidence/member-balance.v1.json",
+  "steps": [
+    {
+      "stepNumber": 1,
+      "action": "fill",
+      "reason": "Enter the requested Member ID into the search field so I can perform the search next.",
+      "target": {
+        "role": "textbox",
+        "name": "Member ID"
+      },
+      "value": "[REDACTED]",
+      "outputs": []
+    },
+    {
+      "stepNumber": 2,
+      "action": "click",
+      "reason": "Click the Search button to retrieve member [REDACTED]'s record and view their current savings balance.",
+      "target": {
+        "role": "button",
+        "name": "Search"
+      },
+      "value": null,
+      "outputs": []
+    },
+    {
+      "stepNumber": 3,
+      "action": "finish",
+      "reason": "Search completed and the page displays member [REDACTED] ([REDACTED]) with current savings balance [REDACTED]; task complete.",
+      "target": null,
+      "value": null,
+      "outputs": [
+        {
+          "name": "member_id",
+          "value": "[REDACTED]"
+        },
+        {
+          "name": "member_name",
+          "value": "[REDACTED]"
+        },
+        {
+          "name": "current_savings_balance",
+          "value": "[REDACTED]"
+        }
+      ]
+    }
+  ]
+}

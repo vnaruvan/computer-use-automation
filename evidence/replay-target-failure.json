@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-08-14T22:51:02.414Z",
+  "runType": "deterministic-replay",
+  "modelUsed": false,
+  "capabilityId": "member.lookup-savings-balance",
+  "capabilityVersion": "1.0.0",
+  "inputs": {
+    "memberId": "[REDACTED]"
+  },
+  "result": {
+    "status": "failure",
+    "capabilityId": "member.lookup-savings-balance",
+    "failureType": "hard",
+    "code": "TARGET_NOT_FOUND",
+    "stepId": "step-2",
+    "message": "Could not find button: Unavailable Search Control"
+  },
+  "context": {
+    "simulation": true,
+    "simulatedCondition": "The recorded Search control could not be located.",
+    "originalTarget": "Search",
+    "injectedTarget": "Unavailable Search Control"
+  }
+}

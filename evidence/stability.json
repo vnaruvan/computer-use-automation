@@ -1,0 +1,74 @@
+{
+  "recordedAt": "2026-08-14T22:54:40.139Z",
+  "runType": "deterministic-replay-stability",
+  "modelUsed": false,
+  "capabilityId": "member.lookup-savings-balance",
+  "capabilityVersion": "1.0.0",
+  "requestedRuns": 10,
+  "successCount": 10,
+  "successRate": 1,
+  "inputsPersisted": false,
+  "outputsPersisted": false,
+  "runs": [
+    {
+      "runNumber": 1,
+      "status": "success",
+      "code": null,
+      "durationMs": 118
+    },
+    {
+      "runNumber": 2,
+      "status": "success",
+      "code": null,
+      "durationMs": 109
+    },
+    {
+      "runNumber": 3,
+      "status": "success",
+      "code": null,
+      "durationMs": 115
+    },
+    {
+      "runNumber": 4,
+      "status": "success",
+      "code": null,
+      "durationMs": 96
+    },
+    {
+      "runNumber": 5,
+      "status": "success",
+      "code": null,
+      "durationMs": 100
+    },
+    {
+      "runNumber": 6,
+      "status": "success",
+      "code": null,
+      "durationMs": 117
+    },
+    {
+      "runNumber": 7,
+      "status": "success",
+      "code": null,
+      "durationMs": 109
+    },
+    {
+      "runNumber": 8,
+      "status": "success",
+      "code": null,
+      "durationMs": 96
+    },
+    {
+      "runNumber": 9,
+      "status": "success",
+      "code": null,
+      "durationMs": 98
+    },
+    {
+      "runNumber": 10,
+      "status": "success",
+      "code": null,
+      "durationMs": 96
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-08-14T21:21:38.315Z",
+  "runType": "deterministic-replay",
+  "modelUsed": false,
+  "capabilityId": "member.lookup-savings-balance",
+  "capabilityVersion": "1.0.0",
+  "inputs": {
+    "memberId": "[REDACTED]"
+  },
+  "result": {
+    "status": "failure",
+    "capabilityId": "member.lookup-savings-balance",
+    "failureType": "hard",
+    "code": "INVALID_INPUT",
+    "stepId": null,
+    "message": "Input failed validation: memberId"
+  }
+}
