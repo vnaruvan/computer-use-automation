@@ -10,21 +10,21 @@ Northstar Core is the local target application included in this repository. All 
 
 Requirements:
 
-* Node.js 24
-* npm
-* An OpenAI API key for discovery
-* Chromium through Playwright
+- Node.js 24
+- npm
+- An OpenAI API key for discovery
 
-Install the project:
+Clone the repository and run setup:
 
 ```bash
-git clone https://github.com/vnaruvan/computer-use-automation
+git clone https://github.com/vnaruvan/computer-use-automation.git
 cd computer-use-automation
-npm ci
-npx playwright install chromium
+npm run setup
 ```
 
-Create the environment file:
+The setup command installs the locked dependencies, installs Chromium through Playwright, compiles the project, and runs the tests.
+
+To run discovery, create the environment file:
 
 ```bash
 cp .env.example .env
@@ -38,14 +38,7 @@ OPENAI_MODEL=gpt-5-mini
 TARGET_URL=http://127.0.0.1:4173
 ```
 
-`.env` is ignored by Git.
-
-Check the build:
-
-```bash
-npm run build
-npm test
-```
+Replay and the other model-free commands do not require an API key. The `.env` file is ignored by Git.
 
 ## Run the target application
 
