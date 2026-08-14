@@ -18,7 +18,7 @@ Requirements:
 Install the project:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/vnaruvan/computer-use-automation
 cd computer-use-automation
 npm ci
 npx playwright install chromium
