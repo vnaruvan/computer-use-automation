@@ -50,7 +50,7 @@ Replay is limited to the configured application address. Every action must appea
 
 Balance lookup is treated as read-only. Automated discovery cannot open the sub-account path. That step requires human control, and the final account-creation button stays disabled in the training application.
 
-The artifact marks the member ID and balance as sensitive. Replay evidence replaces both with `[REDACTED]`. Discovery evidence also removes the member ID, member name, and balance from saved model output. The failure screenshot covers the Member ID textbox with a black mask. Member IDs are removed from saved handoff URLs.
+The artifact marks the member ID and balance as sensitive. Replay evidence replaces both with `[REDACTED]`. Discovery evidence also removes the member ID, member name, and balance from saved model output. Saved screenshots cover sensitive member details with black masks. Member IDs are also removed from saved handoff URLs.
 
 The local operator page uses a temporary token and does not save it. Member pages use `Cache-Control: no-store`. If this were deployed, I would replace the token with company login and short-lived access, enforce permissions for each institution, and set rules for deleting old evidence.
 
