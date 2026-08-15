@@ -1,29 +1,37 @@
 import type { Page } from "playwright";
 import type { AgentDecision } from "./decide.js";
 
-const allowedOrigin = "http://127.0.0.1:4173";
-
 export async function executeDecision(
     page: Page,
     decision: AgentDecision,
+    allowedOrigin: string,
 ): Promise<void> {
     const currentOrigin = new URL(page.url()).origin;
 
     if (currentOrigin !== allowedOrigin) {
-        throw new Error(`Blocked page outside allowlist: ${currentOrigin}`);
+        throw new Error(
+            `Blocked page outside allowlist: ${currentOrigin}`,
+        );
     }
 
-    if (decision.type === "finish" || decision.type === "escalate") {
+    if (
+        decision.type === "finish" ||
+        decision.type === "escalate"
+    ) {
         return;
     }
 
     if (!decision.target) {
-        throw new Error(`${decision.type} requires a target`);
+        throw new Error(
+            `${decision.type} requires a target`,
+        );
     }
 
     if (decision.type === "fill") {
         if (decision.target.role !== "textbox") {
-            throw new Error("Fill is allowed only on textboxes");
+            throw new Error(
+                "Fill is allowed only on textboxes",
+            );
         }
 
         if (decision.value === null) {
@@ -44,11 +52,18 @@ export async function executeDecision(
         decision.target.role !== "button" &&
         decision.target.role !== "link"
     ) {
-        throw new Error("Click is allowed only on buttons and links");
+        throw new Error(
+            "Click is allowed only on buttons and links",
+        );
     }
 
-    if (decision.target.name === "Open new sub-account") {
-        throw new Error("Blocked risky action: human approval required");
+    if (
+        decision.target.name ===
+        "Open new sub-account"
+    ) {
+        throw new Error(
+            "Blocked risky action: human approval required",
+        );
     }
 
     await page

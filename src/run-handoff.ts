@@ -85,9 +85,14 @@ async function run(): Promise<void> {
         const screenshotPath =
             "evidence/handoff-request.png";
 
+        const sensitiveDetails =
+            page.locator("dd");
+
         await page.screenshot({
             path: screenshotPath,
             fullPage: true,
+            mask: [sensitiveDetails],
+            maskColor: "#000000",
         });
 
         const waitForResume = session.pause({

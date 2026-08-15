@@ -6,6 +6,13 @@ import { executeDecision } from "./agent/execute.js";
 
 loadEnvFile();
 
+const targetUrl =
+    process.env.TARGET_URL ??
+    "http://127.0.0.1:4173";
+
+const allowedOrigin =
+    new URL(targetUrl).origin;
+
 const browser = await chromium.launch({
     headless: true,
 });
@@ -13,7 +20,7 @@ const browser = await chromium.launch({
 const page = await browser.newPage();
 
 try {
-    await page.goto("http://127.0.0.1:4173", {
+    await page.goto(targetUrl, {
         waitUntil: "domcontentloaded",
     });
 
@@ -26,11 +33,20 @@ try {
     );
 
     console.log("Model chose:");
-    console.log(JSON.stringify(decision, null, 2));
+    console.log(
+        JSON.stringify(decision, null, 2),
+    );
 
-    await executeDecision(page, decision);
+    await executeDecision(
+        page,
+        decision,
+        allowedOrigin,
+    );
 
-    if (decision.type === "fill" && decision.target) {
+    if (
+        decision.type === "fill" &&
+        decision.target
+    ) {
         const enteredValue = await page
             .getByRole("textbox", {
                 name: decision.target.name,

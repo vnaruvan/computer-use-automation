@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-08-14T23:14:04.992Z",
+  "recordedAt": "2026-08-14T23:46:36.496Z",
   "runType": "human-handoff",
   "modelUsed": false,
   "capabilityId": "member.open-sub-account-review",
@@ -9,7 +9,7 @@
   "finalAccountCreationDisabled": true,
   "handoff": {
     "request": {
-      "id": "intervention-1786749216188",
+      "id": "intervention-1786751175196",
       "capabilityId": "member.open-sub-account-review",
       "goal": "Review the member and open the sub-account confirmation screen.",
       "currentStep": "Click \"Open new sub-account\"",
@@ -18,23 +18,23 @@
       "screenshotPath": "evidence/handoff-request.png",
       "status": "resumed",
       "controlOwner": "automation",
-      "requestedAt": "2026-08-14T23:13:36.188Z"
+      "requestedAt": "2026-08-14T23:46:15.196Z"
     },
     "events": [
       {
-        "recordedAt": "2026-08-14T23:13:36.188Z",
+        "recordedAt": "2026-08-14T23:46:15.196Z",
         "type": "automation_paused",
         "actor": "automation",
         "description": "Automation paused and transferred control to a human."
       },
       {
-        "recordedAt": "2026-08-14T23:14:03.051Z",
+        "recordedAt": "2026-08-14T23:46:34.127Z",
         "type": "human_action",
         "actor": "operator-demo",
         "description": "Navigated to the sub-account confirmation screen."
       },
       {
-        "recordedAt": "2026-08-14T23:14:04.984Z",
+        "recordedAt": "2026-08-14T23:46:36.487Z",
         "type": "automation_resumed",
         "actor": "operator-demo",
         "description": "The human returned control to automation."

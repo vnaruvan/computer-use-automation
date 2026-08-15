@@ -26,6 +26,7 @@ const targetUrl =
     process.env.TARGET_URL ??
     "http://127.0.0.1:4173";
 
+const allowedOrigin = new URL(targetUrl).origin;
 const maximumSteps = 6;
 
 const previousActions: AgentDecision[] = [];
@@ -132,7 +133,7 @@ try {
             break;
         }
 
-        await executeDecision(page, decision);
+        await executeDecision(page, decision, allowedOrigin);
         previousActions.push(decision);
     }
 
