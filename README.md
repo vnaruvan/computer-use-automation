@@ -1,4 +1,4 @@
-# Computer-Use Automation System
+# Policy-Controlled Computer-Use Agent Harness: Computer-Use Automation System
 
 I built this around a record-once, replay-many workflow for applications without a usable API.
 
